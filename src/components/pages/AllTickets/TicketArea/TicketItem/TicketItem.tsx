@@ -22,7 +22,7 @@ export const TicketItem = ({ ticket }: TTicketItem) => {
       <div className="w-[20%] relative image-container py-4 px-3 h-full">
         <Image src={ticket.image} fill className="object-cover z-10" alt="" />
         <div className="relative flex items-start justify-between z-20">
-          <TicketItemButton>Ingresso</TicketItemButton>
+          <TicketItemButton title="Ingresso" />
           <button onClick={() => handleAddItem(ticket)}>
             <JTHeart isInCart={isInCart} />
           </button>

@@ -1,0 +1,25 @@
+import type { Meta, StoryObj } from '@storybook/react'
+import { JTArrowRight } from '.'
+
+const meta: Meta<typeof JTArrowRight> = {
+  title: 'Components/icon/JTArrowRight',
+  component: JTArrowRight,
+  tags: ['autodocs'],
+  args: {
+  },
+}
+
+export default meta
+type Story = StoryObj<typeof JTArrowRight>
+
+export const NotDisabled: Story = {
+  args: {
+    disable: false,
+  },
+}
+
+export const Disabled: Story = {
+  args: {
+    disable: true,
+  },
+}

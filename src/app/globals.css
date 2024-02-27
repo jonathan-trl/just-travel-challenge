@@ -21,15 +21,15 @@ h3 {
 
 a.primary svg,
 button.primary svg {
-  @apply stroke-white;
+  @apply stroke-white fill-white;
 }
 
 a.secondary svg,
 button.secondary svg {
-  @apply stroke-brand-blue;
+  @apply stroke-brand-blue fill-brand-blue;
 }
 
 a.disabled svg,
 button.disabled svg {
-  @apply stroke-gray-30;
+  @apply stroke-gray-30 fill-gray-30;
 }

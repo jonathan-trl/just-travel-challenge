@@ -7,13 +7,11 @@ type ZustandProviderProps = {
 const ZustandProvider = ({ children }: ZustandProviderProps) => {
   const [isHydrated, setIsHydrated] = useState(false)
 
-  console.log(isHydrated)
-
   useEffect(() => {
     setIsHydrated(true)
   }, [])
 
-  return <>{isHydrated ? <>{children}</> : 'aaaaaaa'}</>
+  return <>{isHydrated ? <>{children}</> : null}</>
 }
 
 export default ZustandProvider

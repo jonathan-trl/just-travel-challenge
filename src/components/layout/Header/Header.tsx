@@ -2,7 +2,7 @@ import { JTLogo } from '@/components/icon/JTLogo'
 import { JTSupport } from '@/components/icon/JTSupport'
 import { JTUser } from '@/components/icon/JTUser'
 import Image from 'next/image'
-import { ButtonCart } from './ButtonCart/ButtonCart'
+import { HeaderButtonCart } from './HeaderButtonCart/HeaderButtonCart'
 
 export const Header = () => {
   return (
@@ -31,7 +31,7 @@ export const Header = () => {
             </span>
             <span className="text-md font-bold text-brand-blue">Entrar</span>
           </div>
-          <ButtonCart />
+          <HeaderButtonCart />
         </div>
       </div>
     </header>

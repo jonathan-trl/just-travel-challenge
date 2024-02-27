@@ -19,6 +19,7 @@ export const TicketPagination = ({
 }: TicketPaginationProps) => {
   const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1)
 
+  console.log(currentPage, totalResults, totalPages)
   return (
     <div className="pagination flex w-full justify-end items-center gap-6 font-inter">
       <span className="text-[#828292] text-md">{totalResults} resultados</span>

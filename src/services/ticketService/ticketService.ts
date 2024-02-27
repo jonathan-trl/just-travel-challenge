@@ -14,7 +14,9 @@ const getAllTickets = async (): Promise<Ticket[]> => {
 
 const getTicketDetails = async (ticketId: string): Promise<Ticket> => {
   try {
-    const response: AxiosResponse<Ticket> = await api.get(`/tickets/${ticketId}`)
+    const response: AxiosResponse<Ticket> = await api.get(
+      `/tickets/${ticketId}`
+    )
     return response.data
   } catch (error) {
     console.error(`Erro ao pegar o ticket de id: ${ticketId}:`, error)

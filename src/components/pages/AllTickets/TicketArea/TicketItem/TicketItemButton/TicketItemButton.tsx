@@ -1,12 +1,12 @@
 import { ReactNode } from 'react'
 
 type TicketItemButtonProps = {
-  children: ReactNode
+  title: string
 }
-export const TicketItemButton = ({ children }: TicketItemButtonProps) => {
+export const TicketItemButton = ({ title }: TicketItemButtonProps) => {
   return (
     <button className="w-[70px] h-[24px] leading-[24px] text-center bg-white rounded-[15px] text-sm text-brand-black">
-      {children}
+      {title}
     </button>
   )
 }

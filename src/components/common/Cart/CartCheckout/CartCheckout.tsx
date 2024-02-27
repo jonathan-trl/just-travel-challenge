@@ -12,7 +12,7 @@ export const CartCheckout = () => {
         </span>
       </div>
       <div className="mt-6">
-        <Button bgColor="#0045F3" size="lg" title="Ir para o check out" />
+        <Button size="lg" title="Ir para o check out" />
       </div>
     </div>
   )

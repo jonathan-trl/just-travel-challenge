@@ -6,7 +6,7 @@ import { FilterAreaReviewScore } from './FilterAreaReviewScore'
 
 export const FilterArea = () => {
   return (
-    <div className="bg-white px-spacing-xs shadow-sm col-span-3">
+    <div className="bg-white px-spacing-xs shadow-sm xl:col-span-3">
       <div className="flex py-spacing-xs items-center justify-between border-b border-gray-10">
         <span className="text-heading-2 font-bold text-brand-black">
           Filtro

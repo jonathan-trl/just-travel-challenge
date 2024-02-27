@@ -16,7 +16,6 @@ export const SearchArea = ({ onSubmit }: SearchAreaProps) => {
     register,
     handleSubmit,
     formState: { errors },
-    setValue,
   } = useForm<SearchInputs>({})
 
   return (

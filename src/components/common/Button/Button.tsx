@@ -4,7 +4,6 @@ type ButtonProps = {
   title: string
   size?: 'sm' | 'md' | 'lg'
   colorScheme?: 'primary' | 'secondary'
-  bgColor?: string
   disabled?: boolean
   selected?: boolean
   href?: string
@@ -17,7 +16,6 @@ export const Button = ({
   size = 'sm',
   colorScheme = 'primary',
   disabled = false,
-  bgColor,
   selected = true,
   borderless = false,
   title,
@@ -53,10 +51,6 @@ export const Button = ({
       break
     default:
       btnColorScheme += ' bg-brand-blue text-white'
-  }
-
-  if (bgColor) {
-    btnColorScheme = ` text-white bg-[${bgColor}]`
   }
 
   if (disabled) {

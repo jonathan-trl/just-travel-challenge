@@ -1,4 +1,3 @@
-'use client'
 import { usePagination } from '@/hooks/usePagination'
 import { ticketService } from '@/services/ticketService'
 import { Ticket } from '@/types/Ticket'
@@ -41,7 +40,7 @@ export const TicketArea = ({ filteredTickets }: TicketAreaProps) => {
   if (isError) return <div>Erro ao pegar os ingressos</div>
 
   return (
-    <div className="flex flex-col gap-6 col-span-9">
+    <div className="flex flex-col gap-6 xl:col-span-9">
       {currentData &&
         currentData.map((ticket) => (
           <TicketItem ticket={ticket} key={ticket.id} />
