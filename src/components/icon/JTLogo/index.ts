@@ -1,0 +1,1 @@
+export { JTLogo } from './JTLogo'

@@ -1,0 +1,1 @@
+export { FilterAreaProperty } from './FilterAreaProperty'

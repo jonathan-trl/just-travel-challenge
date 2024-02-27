@@ -1,0 +1,1 @@
+export { JTTrash } from './JTTrash'

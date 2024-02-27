@@ -1,0 +1,1 @@
+export { FilterAreaTitle } from './FilterAreaTitle'

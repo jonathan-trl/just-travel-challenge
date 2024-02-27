@@ -1,0 +1,1 @@
+export { JTButtonBackIcon } from './JTButtonBackIcon'

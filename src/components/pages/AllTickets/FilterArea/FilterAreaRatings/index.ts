@@ -1,0 +1,1 @@
+export { FilterAreaRatings } from './FilterAreaRatings'

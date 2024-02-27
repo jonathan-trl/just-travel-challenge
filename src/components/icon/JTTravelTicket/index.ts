@@ -1,0 +1,1 @@
+export { JTTravelTicket } from './JTTravelTicket'

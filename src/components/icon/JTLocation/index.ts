@@ -1,0 +1,1 @@
+export { JTLocation } from './JTLocation'

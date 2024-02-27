@@ -1,0 +1,1 @@
+export { FilterAreaPrice } from './FilterAreaPrice'

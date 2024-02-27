@@ -1,0 +1,1 @@
+export { JTArrowLeft } from './JTArrowLeft'
