@@ -1,6 +1,7 @@
 'use client'
 import { JTLocation } from '@/components/icon/JTLocation'
 import { JTSearch } from '@/components/icon/JTSearch'
+import { FormEvent } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 
 type SearchAreaProps = {
@@ -15,12 +16,19 @@ export const SearchArea = ({ onSubmit }: SearchAreaProps) => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isDirty },
+    reset,
   } = useForm<SearchInputs>({})
+
+  const handleFormSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    handleSubmit(onSubmit)()
+    reset()
+  }
 
   return (
     <div className="bg-white py-spacing-sm">
-      <form onSubmit={handleSubmit(onSubmit)} className="container">
+      <form onSubmit={handleFormSubmit} className="container">
         <div className="flex items-center border-0.8 border-gray-20 h-[48px]">
           <div className="flex items-center flex-1 h-full">
             <div className="px-spacing-xxs">

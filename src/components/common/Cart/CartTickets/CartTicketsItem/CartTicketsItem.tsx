@@ -1,6 +1,8 @@
 import { JTTrash } from '@/components/icon/JTTrash'
 import { useCart } from '@/store/useCart'
 import { TicketItem } from '@/types/Ticket'
+import { formatDate } from '@/utils/formatDate'
+import { formatPrice } from '@/utils/formatPrice'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -20,7 +22,7 @@ export const CartTicketsItem = ({ ticket }: TicketItem) => {
               href={`/ticket/${ticket.id}`}
               className="text-md text-[#646981]"
             >
-              {ticket.name} - {ticket.createdAt.toLocaleDateString('pt-br')}
+              {ticket.name} - {formatDate(ticket.createdAt)}
             </Link>
             <span className="mt-2 text-[#989AA7]">
               1 Adulto: R$500,00 2 Crianças: R$234,33
@@ -36,10 +38,7 @@ export const CartTicketsItem = ({ ticket }: TicketItem) => {
         <div className="flex justify-between pt-2 pb-3">
           <span className="text-md text-[#646981]">Qtd 1</span>
           <span className="text-md text-[#646981]">
-            {ticket.price.discount.toLocaleString('pt-br', {
-              style: 'currency',
-              currency: 'BRL',
-            })}
+            {formatPrice(ticket.price.discount)}
           </span>
         </div>
         <div className="flex justify-between">
@@ -47,10 +46,7 @@ export const CartTicketsItem = ({ ticket }: TicketItem) => {
             Subtotal
           </span>
           <span className="text-md font-semibold text-[#17191C]">
-            {ticket.price.discount.toLocaleString('pt-br', {
-              style: 'currency',
-              currency: 'BRL',
-            })}
+            {formatPrice(ticket.price.discount)}
           </span>
         </div>
       </div>

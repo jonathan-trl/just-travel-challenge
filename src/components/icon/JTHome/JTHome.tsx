@@ -1,7 +1,6 @@
-type JTHomeProps = {
-  color: string
-}
-export const JTHome = ({ color }: JTHomeProps) => {
+import { IconProps, IconType } from '@/types/Icon'
+
+export const JTHome = ({ color }: IconProps) => {
   return (
     <svg
       width="18"

@@ -1,4 +1,6 @@
-export const commodities = [
+import { Commodity } from "@/types/filters/Commodity";
+
+export const commodities: Commodity[] = [
   {
     id: 1,
     name: 'Wi-fi',

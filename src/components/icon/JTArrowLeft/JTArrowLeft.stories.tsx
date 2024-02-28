@@ -12,14 +12,7 @@ const meta: Meta<typeof JTArrowLeft> = {
 export default meta
 type Story = StoryObj<typeof JTArrowLeft>
 
-export const NotDisabled: Story = {
+export const Default: Story = {
   args: {
-    disable: false,
-  },
-}
-
-export const Disabled: Story = {
-  args: {
-    disable: true,
   },
 }

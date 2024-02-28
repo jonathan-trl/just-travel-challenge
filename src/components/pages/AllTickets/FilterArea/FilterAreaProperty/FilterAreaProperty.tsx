@@ -1,26 +1,33 @@
-import { properties } from '@/config/filters/Property'
+import { properties } from '@/mocks/filters/Properties'
+import { useState } from 'react'
 import { FilterAreaContainer } from '../Layout/FilterAreaContainer'
 import { FilterAreaTitle } from '../Layout/FilterAreaTitle'
 
 export const FilterAreaProperty = () => {
+  const [selectedProperty, setSelectedProperty] = useState(1)
+
+  const handleSelectProperty = (id: number) => {
+    setSelectedProperty(id === selectedProperty ? selectedProperty : id)
+  }
   return (
     <FilterAreaContainer>
       <FilterAreaTitle title="Tipo de propriedade" />
       <div className="flex flex-col gap-3">
-        {properties.map((property) => (
+        {properties.map(({ id, name, icon: Icon, qtt }) => (
           <div
-            className={`option flex items-center rounded-sm cursor-pointer border py-1 ${
-              property.selected ? 'border-brand-blue' : 'border-gray-20'
+            key={id}
+            className={`option flex gap-2 pl-2 items-center rounded-sm cursor-pointer border py-1 ${
+              id == selectedProperty ? 'border-brand-blue' : 'border-gray-20'
             }`}
-            key={property.id}
+            onClick={() => handleSelectProperty(id)}
           >
-            <div className="mx-2">{property.icon}</div>
+            <Icon color={id == selectedProperty ? '#4070F4' : '#CED2DB'} />
             <span
               className={`${
-                property.selected ? 'text-brand-blue' : 'text-gray-20'
+                id == selectedProperty ? 'text-brand-blue' : 'text-gray-20'
               }`}
             >
-              {property.name} ({property.qtt})
+              {name} ({qtt})
             </span>
           </div>
         ))}

@@ -2,7 +2,7 @@ import { Ticket } from '@/types/Ticket'
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 
-type CartItem = {
+export type CartItem = {
   count: number
 } & Ticket
 

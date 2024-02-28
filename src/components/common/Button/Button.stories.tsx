@@ -47,6 +47,6 @@ export const Large: Story = {
 export const Icon: Story = {
   args: {
     size: 'md',
-    icon: <JTArrowUpRight />,
+    icon: JTArrowUpRight,
   },
 }

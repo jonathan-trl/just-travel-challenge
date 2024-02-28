@@ -1,4 +1,4 @@
-import { reviews } from '@/config/filters/Reviews'
+import { reviews } from '@/mocks/filters/Reviews'
 import { FilterAreaContainer } from '../Layout/FilterAreaContainer'
 import { FilterAreaTitle } from '../Layout/FilterAreaTitle'
 

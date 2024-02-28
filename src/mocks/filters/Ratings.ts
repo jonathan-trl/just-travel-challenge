@@ -1,4 +1,6 @@
-export const ratings = [
+import { Rating } from "@/types/filters/Rating";
+
+export const ratings: Rating[] = [
   {
     id: 1,
     qtt: 134,

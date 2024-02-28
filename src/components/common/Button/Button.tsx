@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import { IconType } from '@/types/Icon'
 
 type ButtonProps = {
   title: string
@@ -8,7 +8,7 @@ type ButtonProps = {
   selected?: boolean
   href?: string
   borderless?: boolean
-  icon?: ReactNode
+  icon?: IconType
   onClick?: () => void
 }
 
@@ -19,13 +19,15 @@ export const Button = ({
   selected = true,
   borderless = false,
   title,
-  icon,
+  icon: Icon,
   href,
   onClick,
 }: ButtonProps) => {
   let btnColorScheme = ''
 
   let btnSizes = ''
+
+  let iconColor = ''
 
   switch (size) {
     case 'lg':
@@ -43,18 +45,21 @@ export const Button = ({
 
   switch (colorScheme) {
     case 'primary':
-      btnColorScheme += ' bg-brand-blue text-white primary'
+      btnColorScheme += ' bg-brand-blue text-white'
+      iconColor = '#fff'
       break
     case 'secondary':
-      btnColorScheme +=
-        ' bg-white border border-brand-blue text-brand-blue secondary'
+      btnColorScheme += ' bg-white border border-brand-blue text-brand-blue'
+      iconColor = '#4070F4'
       break
     default:
       btnColorScheme += ' bg-brand-blue text-white'
+      iconColor = '#fff'
   }
 
   if (disabled) {
     btnColorScheme = ' bg-gray-10 text-gray-30 disabled'
+    iconColor = '#B6BCC9'
   }
 
   if (!selected) {
@@ -73,7 +78,7 @@ export const Button = ({
       } ${btnSizes + btnColorScheme}`}
     >
       <span>{title}</span>
-      {icon && <span>{icon}</span>}
+      {Icon && <Icon color={iconColor} />}
     </ElementType>
   )
 }

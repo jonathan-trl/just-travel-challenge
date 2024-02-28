@@ -18,18 +18,3 @@ h2 {
 h3 {
   @apply text-heading-3 font-bold text-brand-black;
 }
-
-a.primary svg,
-button.primary svg {
-  @apply stroke-white fill-white;
-}
-
-a.secondary svg,
-button.secondary svg {
-  @apply stroke-brand-blue fill-brand-blue;
-}
-
-a.disabled svg,
-button.disabled svg {
-  @apply stroke-gray-30 fill-gray-30;
-}

@@ -5,6 +5,7 @@ import { JTArrowUpRight } from '@/components/icon/JTArrowUpRight'
 import { JTHeart } from '@/components/icon/JTHeart'
 import { useCart } from '@/store/useCart'
 import { TicketItem as TTicketItem, Ticket } from '@/types/Ticket'
+import { formatPrice } from '@/utils/formatPrice'
 import Image from 'next/image'
 import { TicketItemButton } from './TicketItemButton'
 
@@ -19,8 +20,10 @@ export const TicketItem = ({ ticket }: TTicketItem) => {
 
   return (
     <div className="flex w-full h-[233px] items-center bg-white shadow-sm">
-      <div className="w-[20%] relative image-container py-4 px-3 h-full">
-        <Image src={ticket.image} fill className="object-cover z-10" alt="" />
+      <div className="w-[20%] relative py-4 px-3 h-full">
+        {ticket.image && (
+          <Image src={ticket.image} fill className="object-cover z-10" alt="" />
+        )}
         <div className="relative flex items-start justify-between z-20">
           <TicketItemButton title="Ingresso" />
           <button onClick={() => handleAddItem(ticket)}>
@@ -37,18 +40,13 @@ export const TicketItem = ({ ticket }: TTicketItem) => {
       <div className="w-[20%] px-8">
         <span className="text-sm text-gray-50">
           de{' '}
-          <span className="text-normal">
-            {ticket.price.full.toLocaleString('pt-br', {
-              style: 'currency',
-              currency: 'BRL',
-            })}{' '}
-          </span>
+          <span className="text-normal">{formatPrice(ticket.price.full)} </span>
           por
         </span>
         <div className="flex items-start mt-1">
           <span className="text-brand-black">R$</span>
           <span className="text-heading-2 font-bold text-brand-blue inline-block ml-1">
-            {ticket.price.discount.toLocaleString('pt-br')}
+            {formatPrice(ticket.price.discount, false)}
           </span>
         </div>
         <div className="mt-spacing-sm">
@@ -56,8 +54,9 @@ export const TicketItem = ({ ticket }: TTicketItem) => {
             size="sm"
             colorScheme="primary"
             title="Saber mais"
+            disabled
             href={`/ticket/${ticket.id}`}
-            icon={<JTArrowUpRight />}
+            icon={JTArrowUpRight}
           />
         </div>
       </div>

@@ -5,6 +5,7 @@ import { Ticket as TTicket } from '@/types/Ticket'
 import Image from 'next/image'
 import { TicketCheckout } from './TicketCheckout'
 import { TicketInfo } from './TicketInfo'
+import { ButtonBack } from '@/components/common/ButtonBack'
 
 type TicketProps = {
   ticket: TTicket
@@ -15,7 +16,7 @@ export const Ticket = ({ ticket }: TicketProps) => {
     <div className="container py-12">
       <div className="flex items-start">
         <span className="mr-4">
-          <JTButtonBack />
+          <ButtonBack />
         </span>
         <TicketHeader heading="heading-2" ticket={ticket} />
       </div>
@@ -28,9 +29,9 @@ export const Ticket = ({ ticket }: TicketProps) => {
             borderless
           />
         </div>
-        <Image src={ticket.image} fill className="object-cover z-10" alt="" />
+        <Image src={ticket.image} fill className="object-cover z-10" alt="Imagem do ingresso" />
       </div>
-      <div className="grid grid-cols-12 items-start gap-spacing-sm">
+      <div className="grid xl:grid-cols-12 items-start gap-spacing-sm">
         <TicketInfo ticket={ticket} />
         <TicketCheckout ticket={ticket} />
       </div>

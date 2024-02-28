@@ -8,7 +8,7 @@ import Image from 'next/image'
 
 export const TicketInfo = ({ ticket }: TicketItem) => {
   return (
-    <div className="col-span-9 w-full">
+    <div className="lg:col-span-9 w-full" data-testid="ticket-info">
       <TicketRating rating={ticket.rating} />
       <div className="flex items-center mt-7 gap-4">
         <div className="flex gap-2 items-center">

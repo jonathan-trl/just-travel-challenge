@@ -4,10 +4,6 @@ import { ticketService } from '@/services/ticketService'
 const Page = async ({ params }: { params?: { id: string } }) => {
   const ticket = await ticketService.getTicketDetails(params ? params.id : '1')
 
-  if (!ticket) {
-    return
-  }
-
   return <Ticket ticket={ticket} />
 }
 

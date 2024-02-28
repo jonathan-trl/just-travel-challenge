@@ -1,3 +1,4 @@
+import Loading from '@/app/loading'
 import { usePagination } from '@/hooks/usePagination'
 import { ticketService } from '@/services/ticketService'
 import { Ticket } from '@/types/Ticket'
@@ -36,24 +37,27 @@ export const TicketArea = ({ filteredTickets }: TicketAreaProps) => {
     totalPages,
   } = usePagination(ticketsToPaginate, itemsPerPage)
 
-  if (isLoading) return <div>Carregando...</div>
   if (isError) return <div>Erro ao pegar os ingressos</div>
 
   return (
-    <div className="flex flex-col gap-6 xl:col-span-9">
+    <div className="relative flex flex-col gap-6 lg:col-span-9">
+      {isLoading && <Loading />}
       {currentData &&
         currentData.map((ticket) => (
           <TicketItem ticket={ticket} key={ticket.id} />
         ))}
 
-      <TicketPagination
-        totalResults={ticketsToPaginate.length}
-        totalPages={totalPages}
-        currentPage={currentPage}
-        handleChangePage={handleChangePage}
-        handleNextPage={handleNextPage}
-        handlePreviousPage={handlePreviousPage}
-      />
+      {
+        !isLoading &&
+        <TicketPagination
+          totalResults={ticketsToPaginate.length}
+          totalPages={totalPages}
+          currentPage={currentPage}
+          handleChangePage={handleChangePage}
+          handleNextPage={handleNextPage}
+          handlePreviousPage={handlePreviousPage}
+        />
+      }
     </div>
   )
 }
