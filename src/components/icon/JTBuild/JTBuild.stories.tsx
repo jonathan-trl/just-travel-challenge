@@ -19,3 +19,10 @@ type Story = StoryObj<typeof JTBuild>
 export const Default: Story = {
   args: {},
 }
+
+export const Color: Story = {
+  args: {
+    color: '#F03D3D',
+  },
+}
+

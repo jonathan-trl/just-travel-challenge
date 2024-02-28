@@ -5,6 +5,13 @@ const meta: Meta<typeof HeaderButtonCart> = {
   title: 'Components/layout/Header/HeaderButtonCart',
   component: HeaderButtonCart,
   tags: ['autodocs'],
+  decorators: [
+    (Story) => (
+      <div style={{ position: 'relative', height: '200px', width: '500px' }}>
+        {Story()}
+      </div>
+    ),
+  ],
   args: {},
 }
 

@@ -1,4 +1,6 @@
-export const JTLogo = () => {
+import { IconProps } from '@/types/Icon'
+
+export const JTLogo = ({ color }: IconProps) => {
   return (
     <svg
       width="136"

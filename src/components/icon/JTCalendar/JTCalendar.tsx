@@ -1,4 +1,6 @@
-export const JTCalendar = () => {
+import { IconProps } from '@/types/Icon'
+
+export const JTCalendar = ({ color }: IconProps) => {
   return (
     <svg
       width="24"
@@ -9,14 +11,14 @@ export const JTCalendar = () => {
     >
       <path
         d="M7.50022 3.00104V6.00089"
-        stroke="#4070F4"
+        stroke={`${color ? color : '#4070F4'}`}
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M16.4997 3.00104V6.00089"
-        stroke="#4070F4"
+        stroke={`${color ? color : '#4070F4'}`}
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -27,35 +29,35 @@ export const JTCalendar = () => {
         width="17.9991"
         height="16.4992"
         rx="3"
-        stroke="#4070F4"
+        stroke={`${color ? color : '#4070F4'}`}
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M12.5 14.9992H7.50024"
-        stroke="#4070F4"
+        stroke={`${color ? color : '#4070F4'}`}
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M12.5 11.4994H7.50024"
-        stroke="#4070F4"
+        stroke={`${color ? color : '#4070F4'}`}
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M16.4998 14.9992H15.4999"
-        stroke="#4070F4"
+        stroke={`${color ? color : '#4070F4'}`}
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M16.4998 11.4994H15.4999"
-        stroke="#4070F4"
+        stroke={`${color ? color : '#4070F4'}`}
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"

@@ -19,8 +19,9 @@ type Story = StoryObj<typeof JTHeart>
 export const Default: Story = {
   args: {},
 }
-export const IsInCart: Story = {
+
+export const Color: Story = {
   args: {
-    isInCart: true
+    color: '#F03D3D',
   },
 }

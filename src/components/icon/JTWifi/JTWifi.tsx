@@ -1,4 +1,6 @@
-export const JTWifi = () => {
+import { IconProps } from '@/types/Icon'
+
+export const JTWifi = ({ color }: IconProps) => {
   return (
     <svg
       width="18"
@@ -9,33 +11,32 @@ export const JTWifi = () => {
     >
       <path
         d="M8.99925 14.4375C8.844 14.4375 8.718 14.5635 8.7195 14.7188C8.71875 14.874 8.84475 15 9 15C9.15525 15 9.28125 14.874 9.28125 14.7188C9.28125 14.5635 9.15525 14.4375 8.99925 14.4375"
-        stroke="#9EA5B8"
+        stroke={color ? color : '#9EA5B8'}
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M3.44324 9.00001C6.51224 6.18526 11.487 6.18526 14.556 9.00001"
-        stroke="#9EA5B8"
+        stroke={color ? color : '#9EA5B8'}
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M1.19556 5.853C5.50581 2.049 12.4943 2.049 16.8046 5.853"
-        stroke="#9EA5B8"
+        stroke={color ? color : '#9EA5B8'}
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M5.6842 11.8658C7.51495 10.0447 10.4842 10.0447 12.315 11.8658"
-        stroke="#9EA5B8"
+        stroke={color ? color : '#9EA5B8'}
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
     </svg>
   )
-
 }

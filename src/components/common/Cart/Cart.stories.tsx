@@ -13,14 +13,8 @@ const meta: Meta<typeof Cart> = {
         count: 1,
       },
     ],
+    totalPrice: () => 1440
   },
-  decorators: [
-    (Story) => (
-      <div style={{ position: 'relative', height: '600px', width: '600px' }}>
-        {Story()}
-      </div>
-    ),
-  ],
   parameters: {
     backgrounds: {
       default: 'light',

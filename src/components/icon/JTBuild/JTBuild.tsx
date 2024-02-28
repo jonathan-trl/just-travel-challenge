@@ -1,6 +1,6 @@
 import { IconProps } from '@/types/Icon'
 
-export const JTBuild = ({ color = '#CED2DB' }: IconProps) => {
+export const JTBuild = ({ color }: IconProps) => {
   return (
     <svg
       width="18"

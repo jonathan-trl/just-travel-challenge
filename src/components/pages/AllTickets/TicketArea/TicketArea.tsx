@@ -40,15 +40,14 @@ export const TicketArea = ({ filteredTickets }: TicketAreaProps) => {
   if (isError) return <div>Erro ao pegar os ingressos</div>
 
   return (
-    <div className="relative flex flex-col gap-6 lg:col-span-9">
+    <div className="relative flex flex-col gap-6 xl:col-span-9">
       {isLoading && <Loading />}
       {currentData &&
         currentData.map((ticket) => (
           <TicketItem ticket={ticket} key={ticket.id} />
         ))}
 
-      {
-        !isLoading &&
+      {!isLoading && (
         <TicketPagination
           totalResults={ticketsToPaginate.length}
           totalPages={totalPages}
@@ -57,7 +56,7 @@ export const TicketArea = ({ filteredTickets }: TicketAreaProps) => {
           handleNextPage={handleNextPage}
           handlePreviousPage={handlePreviousPage}
         />
-      }
+      )}
     </div>
   )
 }

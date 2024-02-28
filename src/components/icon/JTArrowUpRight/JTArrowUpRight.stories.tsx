@@ -20,8 +20,9 @@ export const Default: Story = {
   args: {
   },
 }
+
 export const Color: Story = {
   args: {
-    color: "#f00"
+    color: '#F03D3D',
   },
 }

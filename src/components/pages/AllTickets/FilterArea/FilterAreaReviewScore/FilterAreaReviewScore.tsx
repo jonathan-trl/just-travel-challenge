@@ -1,8 +1,13 @@
 import { reviews } from '@/mocks/filters/Reviews'
+import { Review } from '@/types/filters/Review'
 import { FilterAreaContainer } from '../Layout/FilterAreaContainer'
 import { FilterAreaTitle } from '../Layout/FilterAreaTitle'
 
-export const FilterAreaReviewScore = () => {
+type FilterAreaReviewProps = {
+  reviews: Review[]
+}
+
+export const FilterAreaReviewScore = ({ reviews }: FilterAreaReviewProps) => {
   return (
     <FilterAreaContainer>
       <FilterAreaTitle title="Review Score" />

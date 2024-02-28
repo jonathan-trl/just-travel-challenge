@@ -19,3 +19,10 @@ type Story = StoryObj<typeof JTTravelTicket>
 export const Default: Story = {
   args: {},
 }
+
+export const Color: Story = {
+  args: {
+    color: '#F03D3D',
+  },
+}
+

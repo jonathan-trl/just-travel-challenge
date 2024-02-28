@@ -1,4 +1,6 @@
-export const JTChevronDown = () => {
+import { IconProps } from '@/types/Icon'
+
+export const JTChevronDown = ({ color }: IconProps) => {
   return (
     <svg
       width="24"
@@ -9,7 +11,7 @@ export const JTChevronDown = () => {
     >
       <path
         d="M8 10L12 14L16 10"
-        stroke="#323232"
+        stroke={`${color ? color : '#323232'}`}
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"

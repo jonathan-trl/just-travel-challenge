@@ -1,10 +1,14 @@
 import { Button } from '@/components/common/Button'
-import { prices } from '@/mocks/filters/Prices'
+import { Price } from '@/types/filters/Price'
 import { useState } from 'react'
 import { FilterAreaContainer } from '../Layout/FilterAreaContainer'
 import { FilterAreaTitle } from '../Layout/FilterAreaTitle'
 
-export const FilterAreaPrice = () => {
+type FilterAreaPriceProps = {
+  prices: Price[]
+}
+
+export const FilterAreaPrice = ({ prices }: FilterAreaPriceProps) => {
   const [selectedPrice, setSelectedPrice] = useState(1)
 
   const handleSelectPrice = (id: number) => {

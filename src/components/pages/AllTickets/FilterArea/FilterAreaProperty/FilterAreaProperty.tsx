@@ -1,9 +1,13 @@
-import { properties } from '@/mocks/filters/Properties'
+import { PropertyProps } from '@/types/filters/Property'
 import { useState } from 'react'
 import { FilterAreaContainer } from '../Layout/FilterAreaContainer'
 import { FilterAreaTitle } from '../Layout/FilterAreaTitle'
 
-export const FilterAreaProperty = () => {
+type FilterAreaPropertyProps = {
+  properties: PropertyProps[]
+}
+
+export const FilterAreaProperty = ({ properties }: FilterAreaPropertyProps) => {
   const [selectedProperty, setSelectedProperty] = useState(1)
 
   const handleSelectProperty = (id: number) => {

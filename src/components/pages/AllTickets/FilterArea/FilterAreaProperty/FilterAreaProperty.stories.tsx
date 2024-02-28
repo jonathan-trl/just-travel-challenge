@@ -1,3 +1,4 @@
+import { properties } from '@/mocks/filters/Properties'
 import type { Meta, StoryObj } from '@storybook/react'
 import { FilterAreaProperty } from '.'
 
@@ -5,7 +6,9 @@ const meta: Meta<typeof FilterAreaProperty> = {
   title: 'Components/pages/AllTickets/FilterArea/FilterAreaProperty',
   component: FilterAreaProperty,
   tags: ['autodocs'],
-  args: {},
+  args: {
+    properties,
+  },
   parameters: {
     backgrounds: {
       default: 'light',

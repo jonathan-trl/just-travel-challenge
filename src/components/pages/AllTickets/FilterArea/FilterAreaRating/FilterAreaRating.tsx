@@ -1,10 +1,15 @@
 import { JTStar } from '@/components/icon/JTStar'
 import { ratings } from '@/mocks/filters/Ratings'
+import { Rating } from '@/types/filters/Rating'
 import { useState } from 'react'
 import { FilterAreaContainer } from '../Layout/FilterAreaContainer'
 import { FilterAreaTitle } from '../Layout/FilterAreaTitle'
 
-export const FilterAreaRatings = () => {
+type FilterAreaRatingProps = {
+  ratings: Rating[]
+}
+
+export const FilterAreaRating = ({ ratings }: FilterAreaRatingProps) => {
   const [selectedReview, setSelectedReview] = useState<number | null>(null)
 
   const handleSelectReview = (id: number) => {

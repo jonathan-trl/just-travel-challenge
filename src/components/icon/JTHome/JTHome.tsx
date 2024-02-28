@@ -1,4 +1,4 @@
-import { IconProps, IconType } from '@/types/Icon'
+import { IconProps } from '@/types/Icon'
 
 export const JTHome = ({ color }: IconProps) => {
   return (

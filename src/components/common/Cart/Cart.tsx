@@ -1,5 +1,5 @@
 'use client'
-import { CartItem } from '@/store/useCart'
+import { CartItem, CartStoreProps } from '@/store/useCart'
 import { CartCheckout } from './CartCheckout'
 import { CartSubtotal } from './CartSubtotal'
 import { CartTickets } from './CartTickets'
@@ -11,8 +11,7 @@ type CartProps = {
 export const Cart = ({ cart, totalPrice }: CartProps) => {
   return (
     <div
-      className="absolute top-20 right-0 bg-white w-[500px] px-5 z-50 overflow-y-auto max-h-[540px] shadow-lg font-inter"
-      role="dialog"
+      className="bg-white w-[500px] px-5 overflow-y-auto max-h-[540px] shadow-lg font-inter"
     >
       {cart.length > 0 ? (
         <>

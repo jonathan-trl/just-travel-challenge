@@ -32,7 +32,7 @@ export const AllTickets = () => {
   return (
     <>
       <SearchArea onSubmit={onSubmit} />
-      <div className="container grid lg:grid-cols-12 items-start gap-[30px] py-12">
+      <div className="container grid xl:grid-cols-12 items-start gap-[30px] py-12">
         <FilterArea />
         <TicketArea filteredTickets={filteredTickets} />
       </div>

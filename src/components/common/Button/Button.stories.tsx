@@ -1,6 +1,9 @@
 import { JTArrowUpRight } from '@/components/icon/JTArrowUpRight'
+import { JTCart } from '@/components/icon/JTCart'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Button } from '.'
+
+const icons = { JTArrowUpRight, JTCart }
 
 const meta: Meta<typeof Button> = {
   title: 'Components/common/Button',
@@ -8,6 +11,19 @@ const meta: Meta<typeof Button> = {
   tags: ['autodocs'],
   args: {
     title: 'Button',
+  },
+  argTypes: {
+    icon: {
+      options: Object.keys(icons),
+      mapping: icons,
+      control: {
+        type: 'select',
+        labels: {
+          JTArrowUpRight: 'JTArrowUpRight',
+          JTCart: 'JTCart',
+        },
+      },
+    },
   },
 }
 

@@ -1,9 +1,15 @@
-import { commodities } from '@/mocks/filters/Commodities'
+import { Commodity } from '@/types/filters/Commodity'
 import { useState } from 'react'
 import { FilterAreaContainer } from '../Layout/FilterAreaContainer'
 import { FilterAreaTitle } from '../Layout/FilterAreaTitle'
 
-export const FilterAreaCommodity = () => {
+type FilterAreaCommodityProps = {
+  commodities: Commodity[]
+}
+
+export const FilterAreaCommodity = ({
+  commodities,
+}: FilterAreaCommodityProps) => {
   const [selectedCommodities, setSelectedCommodities] = useState<
     Number[] | null
   >([])

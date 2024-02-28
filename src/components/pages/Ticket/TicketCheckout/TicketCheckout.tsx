@@ -11,7 +11,7 @@ export const TicketCheckout = ({ ticket }: TicketItem) => {
 
   return (
     <div
-      className="lg:col-span-3 flex flex-col px-8 bg-white rounded-lg text-md"
+      className="xl:col-span-3 flex flex-col px-8 bg-white rounded-lg text-md"
       data-testid="ticket-checkout"
     >
       <div className="flex items-center justify-between border-b border-gray-10 py-6">
