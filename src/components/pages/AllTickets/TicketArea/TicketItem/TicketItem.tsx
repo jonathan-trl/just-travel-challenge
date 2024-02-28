@@ -54,7 +54,6 @@ export const TicketItem = ({ ticket }: TTicketItem) => {
             size="sm"
             colorScheme="primary"
             title="Saber mais"
-            disabled
             href={`/ticket/${ticket.id}`}
             icon={JTArrowUpRight}
           />
