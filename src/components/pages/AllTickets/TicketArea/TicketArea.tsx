@@ -1,8 +1,7 @@
 import Loading from '@/app/loading'
 import { usePagination } from '@/hooks/usePagination'
-import { ticketService } from '@/services/ticketService'
+import { useTicket } from '../../../../hooks/useTicket'
 import { Ticket } from '@/types/Ticket'
-import { useQuery } from '@tanstack/react-query'
 import { TicketItem } from './TicketItem'
 import { TicketPagination } from './TicketPagination'
 
@@ -11,14 +10,7 @@ type TicketAreaProps = {
 }
 
 export const TicketArea = ({ filteredTickets }: TicketAreaProps) => {
-  const {
-    data: allTickets,
-    isError,
-    isLoading,
-  } = useQuery({
-    queryKey: ['allTickets'],
-    queryFn: ticketService.getAllTickets,
-  })
+  const { data: allTickets, isError, isLoading } = useTicket()
 
   const ticketsToPaginate =
     filteredTickets && filteredTickets?.length > 0
@@ -42,20 +34,23 @@ export const TicketArea = ({ filteredTickets }: TicketAreaProps) => {
   return (
     <>
       {isLoading && <Loading />}
+      
       {currentData &&
         currentData.map((ticket) => (
           <TicketItem ticket={ticket} key={ticket.id} />
         ))}
 
       {!isLoading && (
-        <TicketPagination
-          totalResults={ticketsToPaginate.length}
-          totalPages={totalPages}
-          currentPage={currentPage}
-          handleChangePage={handleChangePage}
-          handleNextPage={handleNextPage}
-          handlePreviousPage={handlePreviousPage}
-        />
+        <div data-testid="ticket-pagination">
+          <TicketPagination
+            totalResults={ticketsToPaginate.length}
+            totalPages={totalPages}
+            currentPage={currentPage}
+            handleChangePage={handleChangePage}
+            handleNextPage={handleNextPage}
+            handlePreviousPage={handlePreviousPage}
+          />
+        </div>
       )}
     </>
   )

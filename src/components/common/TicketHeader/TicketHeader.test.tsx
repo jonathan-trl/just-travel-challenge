@@ -1,11 +1,11 @@
+import { ticketMock } from '@/mocks/Ticket'
 import { fireEvent, render } from '@testing-library/react'
 import { TicketHeader } from '.'
-import { ticketMock } from '@/mocks/Ticket'
 
 describe('<TicketHeader>', () => {
   it('Should render TicketHeader with heading-3', () => {
     const { getByText } = render(<TicketHeader ticket={ticketMock} />)
-    const heading = getByText(/Museu de Arte Moderna/i)
+    const heading = getByText(new RegExp(ticketMock.name, 'i'))
     expect(heading).toBeInTheDocument()
     expect(heading.tagName).toBe('H3')
   })
@@ -14,14 +14,14 @@ describe('<TicketHeader>', () => {
     const { getByText } = render(
       <TicketHeader ticket={ticketMock} heading="heading-2" />
     )
-    const heading = getByText(/Museu de Arte Moderna/i)
+    const heading = getByText(new RegExp(ticketMock.name, 'i'))
     expect(heading).toBeInTheDocument()
     expect(heading.tagName).toBe('H2')
   })
 
   it('Should render TicketHeader with location ticket', () => {
     const { getByText } = render(<TicketHeader ticket={ticketMock} />)
-    const location = getByText(/Rio de Janeiro, RJ/i)
+    const location = getByText(new RegExp(ticketMock.location))
     expect(location).toBeInTheDocument()
   })
 

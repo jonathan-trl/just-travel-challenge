@@ -1,7 +1,7 @@
 import { JTArrowLeft } from '@/components/icon/JTArrowLeft'
 import { JTArrowRight } from '@/components/icon/JTArrowRight'
 
-type TicketPaginationProps = {
+export type TicketPaginationProps = {
   currentPage: number
   totalPages: number
   totalResults: number
@@ -30,6 +30,7 @@ export const TicketPagination = ({
           onChange={(e) => handleChangePage(Number(e.target.value))}
           value={currentPage}
           className="w-[70px] py-1.5 px-2 outline-none border border-[#8A90BD] rounded-md"
+          data-testid="select-change-page"
         >
           {pageNumbers.map((page) => (
             <option
@@ -47,6 +48,7 @@ export const TicketPagination = ({
           onClick={handlePreviousPage}
           disabled={currentPage === 1}
           className="arrow-left"
+          data-testid="button-previous-page"
         >
           <JTArrowLeft color={currentPage === 1 ? '#9EAAE1' : '#455CC7'} />
         </button>
@@ -70,6 +72,7 @@ export const TicketPagination = ({
           onClick={handleNextPage}
           disabled={currentPage === totalPages}
           className="arrow-right"
+          data-testid="button-next-page"
         >
           <JTArrowRight
             color={currentPage === totalPages ? '#9EAAE1' : '#455CC7'}

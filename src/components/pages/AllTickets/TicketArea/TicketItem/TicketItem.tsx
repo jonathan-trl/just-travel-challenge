@@ -25,7 +25,7 @@ export const TicketItem = ({ ticket }: TTicketItem) => {
           <Image src={ticket.image} fill className="object-cover z-10" alt="" />
         )}
         <div className="relative flex items-start justify-between z-20">
-          <TicketItemButton title="Ingresso" />
+          <TicketItemButton title="Ingresso" href={`/ticket/${ticket.id}`} />
           <button onClick={() => handleAddItem(ticket)}>
             <JTHeart color={isInCart ? '#fff' : ''} />
           </button>

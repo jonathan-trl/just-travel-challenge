@@ -6,7 +6,7 @@ describe('<Ticket>', () => {
   it('Should render Ticket with ticket heading', () => {
     const { getAllByText } = render(<Ticket ticket={ticketMock} />)
 
-    const ticketHeading = getAllByText(/Museu de Arte Moderna/i)
+    const ticketHeading = getAllByText(ticketMock.name)
     expect(ticketHeading).toBeTruthy()
   })
 

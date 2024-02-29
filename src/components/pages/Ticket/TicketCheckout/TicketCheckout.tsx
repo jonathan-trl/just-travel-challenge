@@ -1,14 +1,18 @@
+'use client'
 import { Button } from '@/components/common/Button'
 import { JTCalendar } from '@/components/icon/JTCalendar'
 import { JTChevronDown } from '@/components/icon/JTChevronDown'
 import { JTUser } from '@/components/icon/JTUser'
+import { useCart } from '@/store/useCart'
 import { TicketItem } from '@/types/Ticket'
 import { formatDate } from '@/utils/formatDate'
 import { formatPrice } from '@/utils/formatPrice'
 
 export const TicketCheckout = ({ ticket }: TicketItem) => {
   ticket.createdAt = new Date(ticket.createdAt)
+  const { cart, toggle } = useCart()
 
+  const isInCart = cart.some((cartTicket) => cartTicket.id === ticket.id)
   return (
     <div
       className="xl:col-span-3 flex flex-col px-8 bg-white rounded-lg text-md"
@@ -61,7 +65,12 @@ export const TicketCheckout = ({ ticket }: TicketItem) => {
             {formatPrice(ticket.price.discount)}
           </span>
         </div>
-        <Button size="lg" title="Comprar Ingresso" />
+        <Button
+          onClick={() => toggle(ticket)}
+          disabled={isInCart}
+          size="lg"
+          title={isInCart ? 'Ingresso no carrinho' : 'Comprar Ingresso'}
+        />
       </div>
     </div>
   )

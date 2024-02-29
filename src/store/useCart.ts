@@ -10,6 +10,7 @@ export type CartStoreProps = {
   cart: CartItem[]
   count: () => number
   toggle: (ticket: Ticket) => void
+  add: (ticket: Ticket) => void
   removeItem: (id: string) => void
   removeAll: () => void
   totalPrice: () => number
@@ -20,6 +21,11 @@ export const useCart = create<CartStoreProps>()(
     (set, get) => ({
       cart: [],
       toggle: (ticket: Ticket) => {
+        const { cart } = get()
+        const updatedCart = toggleToCart(cart, ticket)
+        set({ cart: updatedCart })
+      },
+      add: (ticket: Ticket) => {
         const { cart } = get()
         const updatedCart = toggleToCart(cart, ticket)
         set({ cart: updatedCart })

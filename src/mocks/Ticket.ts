@@ -6,7 +6,7 @@ export const ticketMock: Ticket = {
   location: 'Rio de Janeiro, RJ',
   image: 'https://i.postimg.cc/zD6RYYc7/museu-de-arte.jpg',
   description:
-    'Teste ticket',
+    'O Museu de Arte Moderna é um espaço cultural dedicado à exibição de obras de arte moderna e contemporânea, destacando-se pela diversidade de artistas e estilos.',
   price: {
     full: 2351.28,
     discount: 1391.28,
