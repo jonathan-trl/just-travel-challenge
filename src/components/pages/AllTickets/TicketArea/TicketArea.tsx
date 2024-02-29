@@ -40,7 +40,7 @@ export const TicketArea = ({ filteredTickets }: TicketAreaProps) => {
   if (isError) return <div>Erro ao pegar os ingressos</div>
 
   return (
-    <div className="relative flex flex-col gap-6 xl:col-span-9">
+    <>
       {isLoading && <Loading />}
       {currentData &&
         currentData.map((ticket) => (
@@ -57,6 +57,6 @@ export const TicketArea = ({ filteredTickets }: TicketAreaProps) => {
           handlePreviousPage={handlePreviousPage}
         />
       )}
-    </div>
+    </>
   )
 }

@@ -8,7 +8,7 @@ describe('<HeaderButtonCart>', () => {
     const cartButton = getByRole('button')
     expect(cartButton).toBeInTheDocument()
 
-    const countElement = getByText('0')
+    const countElement = getByText(/0/i)
     expect(countElement).toBeInTheDocument()
   })
 

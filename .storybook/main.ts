@@ -21,5 +21,6 @@ const config: StorybookConfig = {
     config.resolve!.alias!['@'] = path.resolve(__dirname, '../src/')
     return config
   },
+  staticDirs: ['../public/images', '../public'],
 }
 export default config

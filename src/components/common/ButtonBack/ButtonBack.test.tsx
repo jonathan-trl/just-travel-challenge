@@ -2,7 +2,7 @@ import { render } from '@testing-library/react'
 import { ButtonBack } from '.'
 
 describe('<ButtonBack>', () => {
-  it('Should render button back', () => {
+  it('Should render ButtonBack correctly', () => {
     const { getByRole } = render(<ButtonBack />)
     const linkElement = getByRole('link')
     expect(linkElement).toBeInTheDocument()

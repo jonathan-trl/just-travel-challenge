@@ -29,12 +29,32 @@ export const AllTickets = () => {
     }
   }
 
+  const onClearFilter = () => {
+    setFilteredTickets([])
+  }
+
   return (
     <>
-      <SearchArea onSubmit={onSubmit} />
+      <div className="bg-white py-spacing-sm">
+        <div className="container">
+          <SearchArea onSubmit={onSubmit} />
+          {filteredTickets && filteredTickets.length > 0 && (
+            <span
+              onClick={onClearFilter}
+              className="inline-block cursor-pointer mt-4 text-md"
+            >
+              Limpar filtro
+            </span>
+          )}
+        </div>
+      </div>
       <div className="container grid xl:grid-cols-12 items-start gap-[30px] py-12">
-        <FilterArea />
-        <TicketArea filteredTickets={filteredTickets} />
+        <div className="bg-white px-spacing-xs shadow-sm xl:col-span-3">
+          <FilterArea />
+        </div>
+        <div className="relative flex flex-col gap-6 xl:col-span-9">
+          <TicketArea filteredTickets={filteredTickets} />
+        </div>
       </div>
     </>
   )

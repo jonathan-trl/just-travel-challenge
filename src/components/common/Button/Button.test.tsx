@@ -3,7 +3,7 @@ import { Button } from '.'
 import { JTWifi } from '@/components/icon/JTWifi'
 
 describe('<Button>', () => {
-  it('Should render Button with default props', () => {
+  it('Should render Button correctly', () => {
     const { getByRole } = render(<Button title="Click me" />)
     const button = getByRole('button')
     expect(button).toBeInTheDocument()

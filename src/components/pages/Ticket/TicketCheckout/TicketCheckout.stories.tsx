@@ -1,4 +1,4 @@
-import { ticket } from '@/mocks/Ticket'
+import { ticketMock } from '@/mocks/Ticket'
 import type { Meta, StoryObj } from '@storybook/react'
 import { TicketCheckout } from '.'
 
@@ -7,7 +7,7 @@ const meta: Meta<typeof TicketCheckout> = {
   component: TicketCheckout,
   tags: ['autodocs'],
   args: {
-    ticket: ticket,
+    ticket: ticketMock,
   },
   parameters: {
     backgrounds: {

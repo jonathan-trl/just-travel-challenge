@@ -11,20 +11,21 @@ import { FilterAreaReviewScore } from './FilterAreaReviewScore'
 
 export const FilterArea = () => {
   return (
-    <div className="bg-white px-spacing-xs shadow-sm xl:col-span-3">
-      <div className="flex py-spacing-xs items-center justify-between border-b border-gray-10">
+    <>
+      <div
+        className="flex py-spacing-xs items-center justify-between border-b border-gray-10"
+        data-testid="filter-area"
+      >
         <span className="text-heading-2 font-bold text-brand-black">
           Filtro
         </span>
-        <span className="text-support-06 cursor-pointer">
-          Limpar todos os filtros
-        </span>
+        <span className="text-support-06">Limpar todos os filtros</span>
       </div>
       <FilterAreaPrice prices={prices} />
       <FilterAreaRating ratings={ratings} />
       <FilterAreaCommodity commodities={commodities} />
       <FilterAreaProperty properties={properties} />
       <FilterAreaReviewScore reviews={reviews} />
-    </div>
+    </>
   )
 }

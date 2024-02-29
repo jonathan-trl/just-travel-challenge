@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# JustTravel - Frontend
 
-## Getting Started
+Este é o front-end do desafio JustTravel, uma loja de turismo que oferece uma variedade de pacotes de viagem para destinos incríveis ao redor do mundo.
 
-First, run the development server:
+## Tecnologias Utilizadas
 
+- [Next.js 14](https://nextjs.org/) - Framework React para desenvolvimento de aplicações web.
+- [Tailwind CSS](https://tailwindcss.com/) - Framework CSS utilitário para estilização rápida e eficiente.
+- [Storybook](https://storybook.js.org/) - Ferramenta de desenvolvimento para UI de componentes React.
+- [Jest](https://jestjs.io/pt-BR/) - Jest é um poderoso Framework de Testes em JavaScript com um foco na simplicidade.
+
+## Instalação
+
+### Clone o projeto:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/jonathan-trl/just-travel-challenge.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Navegue até a pasta do projeto:
+```bash
+cd just-travel-challenge
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Instale as dependências:
+```bash
+npm install
+# ou
+yarn install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Abrir o desafio:
+#### O desafio estará disponível em `http://localhost:3000`.
+```bash
+npm run dev
+# ou
+yarn dev
+```
 
-## Learn More
+### Abrir Storybook:
+#### O Storybook estará disponível em `http://localhost:6006`.
+```bash
+npm run storybook
+# ou
+yarn storybook
+```
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Rodar os testes:
+```bash
+npm run test
+# ou
+yarn test
+```

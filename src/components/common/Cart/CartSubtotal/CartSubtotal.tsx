@@ -18,7 +18,7 @@ export const CartSubtotal = ({ totalPrice }: CartSubtotalProps) => {
         <span className="font-circular-std text-brand-black font-bold">
           Subtotal
         </span>
-        <span className="font-semibold text-[#17191C]">
+        <span className="font-semibold text-[#17191C]" data-testid="ticket-total-price">
           {formatPrice(totalPrice())}
         </span>
       </div>

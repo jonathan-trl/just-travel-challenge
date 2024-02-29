@@ -16,7 +16,7 @@ export const SearchArea = ({ onSubmit }: SearchAreaProps) => {
   const {
     register,
     handleSubmit,
-    formState: { errors, isDirty },
+    formState: { errors },
     reset,
   } = useForm<SearchInputs>({})
 
@@ -27,8 +27,10 @@ export const SearchArea = ({ onSubmit }: SearchAreaProps) => {
   }
 
   return (
-    <div className="bg-white py-spacing-sm">
-      <form onSubmit={handleFormSubmit} className="container">
+      <form
+        onSubmit={handleFormSubmit}
+        data-testid="search-form"
+      >
         <div className="flex items-center border-0.8 border-gray-20 h-[48px]">
           <div className="flex items-center flex-1 h-full">
             <div className="px-spacing-xxs">
@@ -39,6 +41,7 @@ export const SearchArea = ({ onSubmit }: SearchAreaProps) => {
                 className="h-full w-full outline-none text-md text-gray-40"
                 type="text"
                 placeholder="Busque por atração"
+                data-testid="search-input"
                 {...register('name')}
               />
             </div>
@@ -55,6 +58,5 @@ export const SearchArea = ({ onSubmit }: SearchAreaProps) => {
           </div>
         )}
       </form>
-    </div>
   )
 }

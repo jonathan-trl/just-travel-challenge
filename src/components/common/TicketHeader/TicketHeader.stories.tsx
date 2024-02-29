@@ -1,6 +1,6 @@
-import { ticket } from '@/mocks/Ticket'
 import type { Meta, StoryObj } from '@storybook/react'
 import { TicketHeader } from '.'
+import { ticketMock } from '@/mocks/Ticket'
 
 const meta: Meta<typeof TicketHeader> = {
   title: 'Components/common/TicketHeader',
@@ -8,7 +8,7 @@ const meta: Meta<typeof TicketHeader> = {
   tags: ['autodocs'],
   args: {
     heading: 'heading-2',
-    ticket: ticket,
+    ticket: ticketMock,
   },
   parameters: {
     backgrounds: {
